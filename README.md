@@ -1,4 +1,4 @@
-# AvaloqDice
+# Avaloq Exam - Dice Application 
 
 Dice Roll Application - Simulations where you can roll dice given the parameters (number of dice, sides, and how many rolls)
 
@@ -10,11 +10,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Agular Application
 
-Run `ng serve` to run the angular application. Navigate to `http://localhost:4200/`.
+Run `npm install` then `ng serve` to run the angular application. Navigate to `http://localhost:4200/`.
 
 ## Springboot Backend Application
 
-Run java class DiceApplication.java to run the application locally. 
+Run `mvn clean install` then run java class `DiceApplication.java` to run the application locally. 
 
 For Swagger - Navigate to `http://localhost:8080/swagger-ui.html`.
 
