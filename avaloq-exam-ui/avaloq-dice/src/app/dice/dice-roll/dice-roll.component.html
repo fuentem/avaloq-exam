@@ -1,0 +1,78 @@
+<h1>Dice Roll Application </h1>
+
+<form [formGroup]="formGroup" autocomplete="off" (ngSubmit)="rollDice()">
+    <table cellpadding="5">
+        <tr>
+            <td>
+                <label for="dice">Number of Dice: </label>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="dice" 
+                      placeholder="Enter Number of Dice" formControlName="dice" />
+                  </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="sides">Number of Sides: </label>
+            </td>
+            <td>
+                <div class="form-group">
+                    <select name="side" placeholder="Enter Number of Sides" id="side" formControlName="side" >
+                        <option value=4>4</option>
+                        <option value=6>6</option>
+                        <option value=8>8</option>
+                        <option value=10>10</option>
+                        <option value=12>12</option>
+                        <option value=100>100</option>
+                    </select>
+                  </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="rolls">Number of Roll: </label>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="roll" 
+                      placeholder="Enter Number of Roll" formControlName="roll" />
+                  </div>
+            </td>
+        </tr>
+        <tr>
+            <td cellspan="2">
+                <button class="btn btn-primary" type="submit">Roll Dice!</button>
+            </td>
+        </tr>
+    </table>
+ </form>
+<br/>
+
+<div *ngIf="dice?.diceRoll">
+    <h2>Roll Results: </h2>
+
+    <table cellpadding="5" cellspacing="1" border="1" text-align="center">
+        <tr>
+            <th rowspan="2">Roll Results</th>
+            <th rowspan="2">Result Occurred</th>
+            <th rowspan="2">Percentage <br/>(For {{ dice?.roll }} rolls)</th>
+            <th colspan="2">All Simulations - {{ dice?.totalRollSimulations }} rolls ({{ dice?.side }} sides and {{dice?.dice}} dice)</th>
+        </tr>
+        <tr>
+            <th>Total Result Occurred</th>
+            <th>Total Result Percentage</th>
+        </tr>
+        <tr *ngFor="let obj of dice?.diceRoll">
+            <td>{{ obj.rollSum }}</td>
+            <td>{{ obj.numberOfTimes }}</td>
+            <td>{{ obj.rollPercentage }}%</td>
+            <td>{{ obj.totalNumberOfOccurence }}</td>
+            <td>{{ obj.totalRollPercentage }}%</td>
+        </tr>
+    </table>
+    <h4>Rolls Generated: {{ dice?.roll }}</h4>
+    <h4>All Simulation - Total Rolls: {{ dice?.totalRollSimulations }}</h4>
+</div>
+
