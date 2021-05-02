@@ -6,7 +6,7 @@ The result will be displayed and if how many times the same results occurred thr
 
 It is also included in the result to how many results occurred to all the simulations generated in the h2 database and its percentage.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2 and Spring boot [Spring Boot] version 2.2.0.
 
 ## Agular Application
 
